@@ -16,7 +16,7 @@ screen_x, screen_y = screen.get_size()
 pygame.display.set_caption("Bounding Circle")
 clock = pygame.time.Clock()
 
-N = 20
+N = 120
 
 POINT_RADIUS = 3
 points = []
@@ -30,8 +30,8 @@ class Point:
 
 
 for _ in range(N):
-    points.append(Point(X=screen_x // 3 + random.uniform(0, 1) * (screen_x // 3),
-                        Y=screen_y // 3 + random.uniform(0, 1) * (screen_y // 3)))
+    points.append(Point(X=screen_x // 4 + random.uniform(0, 1) * (screen_x * 2 // 4),
+                        Y=screen_y // 4 + random.uniform(0, 1) * (screen_y * 2 // 4)))
 
 
 def Welzl(point_set):
@@ -40,8 +40,8 @@ def Welzl(point_set):
 
 mainLoop = True
 while mainLoop:
-    N_INDICATOR = FONT.render(f"N={N}", False, (255,255,255))
-    screen.blit(N_INDICATOR, (10,10))
+    N_INDICATOR = FONT.render(f"N={N}", False, (255, 255, 255))
+    screen.blit(N_INDICATOR, (10, 10))
     events = pygame.event.get()
     if events:
         for event in events:
